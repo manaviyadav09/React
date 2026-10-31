@@ -1,10 +1,14 @@
-import React from 'react'
-import withAuth from '../utils/withAuth'
+import React from "react";
+import withAuth from "../utils/withAuth";
 
-function Profile() {
+function Profile({ name, role }) {
   return (
-    <div>Profile page</div>
-  )
+    <div>
+      Profile page
+      <p>Name : {name}</p>
+      <p>role : {role}</p>
+    </div>
+  );
 }
 
-export const AuthProfile = withAuth(Profile)
+export const AuthProfile = withAuth(Profile);

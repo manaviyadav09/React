@@ -1,15 +1,11 @@
-import React from 'react'
-
-function withAuth(Components) {
-    return function () {
-        let isLoggedIn = false;
-        if (isLoggedIn) {
-            return <Components />;
-        }
-        return <p>Please login </p>
-    };
+function withAuth(Component) {
+  return function (props) {
+    let isLoggedIn = true;
+    if (isLoggedIn) {
+      return <Component {...props} />;
+    }
+    return <p>Please login</p>;
+  };
 }
 
 export default withAuth;
-
-
